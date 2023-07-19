@@ -1,0 +1,8 @@
+DEFAULT FOR DATA_ELEMENTS IS EMPTY_TEXT_TEXT
+
+INPUTS ARE DATA_ELEMENTS (TEXT_TEXT)
+
+l_concatenated_value = GET_VALUE_SET('MBF_UDT_ROW_VAL_VS', 'P_EFFECTIVE_DATE=' || GET_PARAMETER_VALUE('EFFECTIVE_DATE'))
+L_TEMP = ESS_LOG_WRITE('l_concatenated_value=' || l_concatenated_value)
+
+RETURN l_concatenated_value
